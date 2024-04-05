@@ -13,7 +13,10 @@ export default {
     componentLoader() {
       const path = "./";
       const component = (this.$route && this.$route.meta.layout) || "LayoutBlank";
-      return defineAsyncComponent(() => import(`${path}${component}.vue`));
+      return defineAsyncComponent(() => import( 
+        /* @vite-ignore */
+        `${path}${component}.vue`
+      ));
     },
   },
 };
